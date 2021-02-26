@@ -1,0 +1,250 @@
+Jackfruit #Fruit
+Apple #Fruit
+broccoli #Vegetable
+chamomile #Vegetable
+Soursop #Fruit
+Pear #Fruit
+Green Tea #Beverage
+Tamarillo #Fruit
+fennel #Vegetable
+Raisin #Fruit
+Jostaberry #Fruit
+hubbard squash #Vegetable
+lemon Grass #Vegetable
+Leek #Vegetable
+Japanese plum #Fruit
+tubers #Vegetable
+banana squash #Vegetable
+Salmonberry #Fruit
+Loquat #Fruit
+white radish #Vegetable
+peas #Vegetable
+Prune #Fruit
+Orange Juice #Beverage
+frisee #Vegetable
+radicchio #Vegetable
+Coconut #Fruit
+Mangosteen #Fruit
+squashes #Vegetable
+Goji berry #Fruit
+jerusalem artichoke #Vegetable
+Red Tea #Beverage
+Blackcurrant #Fruit
+navy beans #Vegetable
+Chico fruit #Fruit
+Blood orange #Fruit
+split peas #Vegetable
+Coca-Cola #Beverage
+Olive #Fruit
+acorn squash #Vegetable
+delicata #Vegetable
+Melon #Fruit
+quinoa #Vegetable
+broad beans #Vegetable
+caraway #Vegetable
+Grape #Fruit
+White currant #Fruit
+fiddleheads #Vegetable
+Mandarine #Fruit
+endive #Vegetable
+Kumquat #Fruit
+Guava #Fruit
+quandong #Vegetable
+Tabasco pepper #Vegetable
+cauliflower #Vegetable
+Bilberry #Fruit
+Umeshu #Beverage
+sage #Vegetable
+Dragonfruit #Fruit
+water chestnut #Vegetable
+sweet potato #Vegetable
+green beans #Vegetable
+alfalfa sprouts #Vegetable
+Grapefruit #Fruit
+Beer #Beverage
+brussels sprouts #Vegetable
+Water #Beverage
+topinambur #Vegetable
+kidney beans #Vegetable
+Kiwifruit #Fruit
+pinto beans #Vegetable
+scallion #Vegetable
+Paprika #Vegetable
+Jalapeño #Vegetable
+dill #Vegetable
+potato #Vegetable
+Boysenberry #Fruit
+Mulberry #Fruit
+Papaya #Fruit
+parsley #Vegetable
+Plumcot #Fruit
+Jabuticaba #Fruit
+bean sprouts #Vegetable
+ginger #Vegetable
+Cantaloupe #Fruit
+Watermelon #Fruit
+black beans #Vegetable
+spaghetti squash #Vegetable
+kale #Vegetable
+Pineapple #Fruit
+mung beans #Vegetable
+root vegetables #Vegetable
+Mead #Beverage
+beet greens #Vegetable
+fennel #Vegetable
+Tamarind #Fruit
+collard greens #Vegetable
+Ugli fruit #Fruit
+Jujube #Fruit
+Purple mangosteen #Fruit
+Avocado #Fruit
+parsley #Vegetable
+amrud #Vegetable
+Cucumber #Vegetable
+Lychee #Fruit
+Banana #Fruit
+Garlic #Vegetable
+Persimmon #Fruit
+Yuzu #Fruit
+Raspberry #Fruit
+chickpeas, garbanzos, or ceci beans #Vegetable
+black-eyed peas #Vegetable
+parsnip #Vegetable
+Longan #Fruit
+Fig #Fruit
+Nectarine #Fruit
+Lemon #Fruit
+anise #Vegetable
+taro #Vegetable
+sweetcorn #Vegetable
+lettuce #Vegetable
+marrow #Vegetable
+cabbage #Vegetable
+Black sapote #Fruit
+Pomelo #Fruit
+Marionberry #Fruit
+Apple Juice #Beverage
+Nance #Fruit
+Pomegranate #Fruit
+celery #Vegetable
+Cloudberry #Fruit
+rhubarb #Vegetable
+jicama #Vegetable
+mangetout or snap peas #Vegetable
+Miracle fruit #Fruit
+chard #Vegetable
+Elderberry #Fruit
+aubergine #Vegetable
+carrot #Vegetable
+tat soi #Vegetable
+kohlrabi #Vegetable
+Red Wine #Beverage
+Strawberry #Fruit
+radish #Vegetable
+Currant #Fruit
+skirret #Vegetable
+Crab apples #Fruit
+Cayenne pepper #Vegetable
+turnip #Vegetable
+cilantro #Vegetable
+Pineberry #Fruit
+daikon #Vegetable
+cucumber #Vegetable
+rosemary #Vegetable
+butternut squash #Vegetable
+onions #Vegetable
+Orange #Fruit
+Durian #Fruit
+Honeyberry #Fruit
+bitter melon #Vegetable
+gem squash #Vegetable
+bok choy #Vegetable
+Tangerine #Fruit
+borlotti bean #Vegetable
+mushrooms #Vegetable
+peppers #Vegetable
+artichoke #Vegetable
+lavender #Vegetable
+sunchokes #Vegetable
+White Sapote #Fruit
+salsify #Vegetable
+legumes #Vegetable
+celeriac #Vegetable
+Habanero #Vegetable
+Açaí #Fruit
+patty pans #Vegetable
+Plantain #Fruit
+azuki beans #Vegetable
+chili pepper #Vegetable
+Blackberry #Fruit
+Plum #Fruit
+Salal berry #Fruit
+Blueberry #Fruit
+shallot #Vegetable
+bell pepper #Vegetable
+Peach #Fruit
+Gooseberry #Fruit
+Juniper berry #Fruit
+Quince #Fruit
+okra #Vegetable
+mustard greens #Vegetable
+horseradish #Vegetable
+Whiskey #Beverage
+watercress #Vegetable
+marjoram #Vegetable
+Huckleberry #Fruit
+beetroot #Vegetable
+Damson #Fruit
+Fanta #Beverage
+Star apple #Fruit
+courgette #Vegetable
+Cranberry #Fruit
+runner beans #Vegetable
+Date #Fruit
+lima beans or Butter bean #Vegetable
+onion #Vegetable
+oregano #Vegetable
+Soda #Beverage
+Mango #Fruit
+Jambul #Fruit
+Star fruit #Fruit
+Surinam cherry #Fruit
+herbs and spices #Vegetable
+Clementine #Fruit
+Hot Cocoa #Beverage
+White Wine #Beverage
+Apricot #Fruit
+Grape Juice #Beverage
+Passionfruit #Fruit
+Salak #Fruit
+Cucumber #Fruit
+basil #Vegetable
+Cherry #Fruit
+Kiwano #Fruit
+Redcurrant #Fruit
+White Tea #Beverage
+lentils #Vegetable
+Coffee #Beverage
+nettles #Vegetable
+Black Tea #Beverage
+Sprite #Beverage
+asparagus #Vegetable
+Honeydew #Fruit
+spinach #Vegetable
+Satsuma #Fruit
+yam #Vegetable
+wasabi #Vegetable
+New Zealand spinach #Vegetable
+Akee #Fruit
+Rambutan #Fruit
+soy beans #Vegetable
+broccoflower #Vegetable
+thyme #Vegetable
+arugula #Vegetable
+Chives #Vegetable
+tomato #Vegetable
+greens #Vegetable
+Feijoa #Fruit
+rutabaga #Vegetable
+Lime #Fruit
+pumpkin #Vegetable
