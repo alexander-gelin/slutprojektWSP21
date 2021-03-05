@@ -33,13 +33,25 @@ post('/login') do
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
     result = db.execute("SELECT * FROM user WHERE username = ?",username).first
-    password = result["password"]
+    pwdigest = result["password"]
     id = result ["id"]
 
-    if BCrypt::Password.new(password) == password
+    if BCrypt::Password.new(pwdigest) == password
         session[:id] = id
-        redirect('/creator')
+        redirect('/overview')
     else
         "Wrong password!"
     end
+end
+
+get('/overview') do
+    id = session[:id].to_i
+    db = SQLite3::Database.new('db/charactercreator.db')
+    db.results_as_hash = true
+    slim(:"overview/index")
+end
+
+get('/creator') do
+    id = session[:id].to_i
+    slim(:"creator/create")
 end
