@@ -1,1 +1,7 @@
 h2 Step 1. Choose your race
+
+select name="race"
+    - race.each do |element|
+        option value="#{element["race_name"]}" #{element["race_name"]}
+
+

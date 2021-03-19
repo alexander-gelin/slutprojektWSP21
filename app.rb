@@ -53,5 +53,8 @@ end
 
 get('/creator') do
     id = session[:id].to_i
-    slim(:"creator/create")
+    db = SQLite3::Database.new('db/charactercreator.db')
+    db.results_as_hash = true
+    result = db.execute("SELECT * FROM race")
+    slim(:"creator/create",locals:{race:result})
 end
