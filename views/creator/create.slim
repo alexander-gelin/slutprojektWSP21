@@ -1,7 +1,13 @@
-h2 Step 1. Choose your race
+form action="create" method="POST"
+    label Step 1. Choose your race
+        select name="race"
+            - race.each do |raceelement|
+                option value="#{raceelement["race_name"]}" #{raceelement["race_name"]}
 
-select name="race"
-    - race.each do |element|
-        option value="#{element["race_name"]}" #{element["race_name"]}
+    label Step 2. Choose your class (max 2)
+        select name="class"
+            - class.each do |classelement|
+                option value="#{classelement["class_name"]}" #{classelement["class_name"]}
+
 
 

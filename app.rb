@@ -56,5 +56,6 @@ get('/creator') do
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
     result = db.execute("SELECT * FROM race")
-    slim(:"creator/create",locals:{race:result})
+    result2 = db.execute("SELECT * FROM class")
+    slim(:"creator/create",locals:{race:result,class:result2})
 end
