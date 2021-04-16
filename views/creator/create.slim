@@ -1,13 +1,22 @@
 form action="create" method="POST"
     label Step 1. Choose your race
-        select name="race"
-            - race.each do |raceelement|
-                option value="#{raceelement["race_name"]}" #{raceelement["race_name"]}
+    select name="race"
+        - race.each do |raceelement|
+            option value="#{raceelement["race_name"]}" #{raceelement["race_name"]}
 
     label Step 2. Choose your class (max 2)
-        select name="class"
-            - class.each do |classelement|
-                option value="#{classelement["class_name"]}" #{classelement["class_name"]}
+    select name="klass"
+        - klass.each do |classelement|
+            option value="#{classelement["class_name"]}" #{classelement["class_name"]}
+            option value="#{classelement["class_name"]}" #{classelement["class_name"]}
 
+    label Step 3. Enter name
+    input type="text" name="charactername" placeholder="Your name"
+
+    label Step 4. Enter age
+    input type="text" name="characterage" placeholder="Your age"
+ 
+    label Step 5. Finalize
+    input type="submit" value="Ready for adventure"
 
 

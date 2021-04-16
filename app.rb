@@ -51,11 +51,21 @@ get('/overview') do
     slim(:"overview/index")
 end
 
-get('/creator') do
+get('/creator/new') do
     id = session[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
     result = db.execute("SELECT * FROM race")
     result2 = db.execute("SELECT * FROM class")
-    slim(:"creator/create",locals:{race:result,class:result2})
+    slim(:"creator/create",locals:{race:result,klass:result2})
 end
+
+post('/creator') do
+    race = params[:race]
+    klass = params[:class]
+    name = params[:name]
+    age = params[:age]
+    
+
+    db = SQLite3::Database.new('db/charactercreator.db')
+    db.results_as_hash = true
