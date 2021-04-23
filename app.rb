@@ -48,7 +48,8 @@ get('/overview') do
     id = session[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
-    slim(:"overview/index")
+    result = db.execute("SELECT * FROM character WHERE user_id = ?",id)
+    slim(:"overview/index",locals:{character:result})
 end
 
 get('/creator/new') do
@@ -56,16 +57,20 @@ get('/creator/new') do
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
     result = db.execute("SELECT * FROM race")
-    result2 = db.execute("SELECT * FROM class")
+    result2 = db.execute("SELECT * FROM klass")
     slim(:"creator/create",locals:{race:result,klass:result2})
 end
 
 post('/creator') do
     race = params[:race]
-    klass = params[:class]
+    klass = params[:klass]
     name = params[:name]
     age = params[:age]
-    
+    id = session[:id].to_i
 
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
+    db.execute("INSERT INTO character(age,name,race,klass,user_id) VALUES(?,?,?,?,?)",age,name,race,klass,id)
+    redirect('/overview')
+end
+
