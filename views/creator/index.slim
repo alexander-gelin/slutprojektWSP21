@@ -1,0 +1,14 @@
+h2 #{session[:id]}'s characters:
+
+a id="characterlink" href="/creator/new" Create a character
+
+ol
+    - character.each do |character|
+        li
+            p = character['name']
+            p = character['age']
+            p = character['race']
+            p = character['klass']
+            p = character['spec']
+            form action="/creator/#{character['id']}/delete" method="POST"
+                input id="deletebutton" type="submit" value="Delete"

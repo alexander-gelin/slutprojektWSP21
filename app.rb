@@ -34,22 +34,22 @@ post('/login') do
     db.results_as_hash = true
     result = db.execute("SELECT * FROM user WHERE username = ?",username).first
     pwdigest = result["password"]
-    id = result ["id"]
+    id = result["id"]
 
     if BCrypt::Password.new(pwdigest) == password
         session[:id] = id
-        redirect('/overview')
+        redirect('/creator/')
     else
         "Wrong password!"
     end
 end
 
-get('/overview') do
+get('/creator/') do
     id = session[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
     result = db.execute("SELECT * FROM character WHERE user_id = ?",id)
-    slim(:"overview/index",locals:{character:result})
+    slim(:"creator/index",locals:{character:result})
 end
 
 get('/creator/new') do
@@ -58,19 +58,27 @@ get('/creator/new') do
     db.results_as_hash = true
     result = db.execute("SELECT * FROM race")
     result2 = db.execute("SELECT * FROM klass")
-    slim(:"creator/create",locals:{race:result,klass:result2})
+    slim(:"creator/new",locals:{race:result,klass:result2})
 end
 
 post('/creator') do
+    db = SQLite3::Database.new('db/charactercreator.db')
+    id = session[:id].to_i
     race = params[:race]
     klass = params[:klass]
     name = params[:name]
     age = params[:age]
-    id = session[:id].to_i
 
-    db = SQLite3::Database.new('db/charactercreator.db')
-    db.results_as_hash = true
-    db.execute("INSERT INTO character(age,name,race,klass,user_id) VALUES(?,?,?,?,?)",age,name,race,klass,id)
-    redirect('/overview')
+    klass_id = db.execute("SELECT id FROM klass WHERE class_name = ?",klass)
+
+    spec = db.execute("SELECT spec.spec_name FROM klass_spec_relation INNER JOIN spec ON klass_spec_relation.spec_id = spec.id WHERE klass_id = ?",klass_id)
+    character = db.execute("INSERT INTO character(name,age,race,klass,spec,user_id) VALUES(?,?,?,?,?,?)",name,age,race,klass,spec,id)
+    redirect('/creator/')
 end
 
+post('/creator/:id/delete') do
+    id = params[:id].to_i
+    db = SQLite3::Database.new('db/charactercreator.db')
+    db.execute("DELETE FROM character WHERE id = ?",id)
+    redirect('/creator/')
+end

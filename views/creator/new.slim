@@ -4,10 +4,7 @@ form action="/creator" method="POST"
         - race.each do |raceelement|
             option value="#{raceelement["race_name"]}" #{raceelement["race_name"]}
 
-    label Step 2. Choose your classes (max 2)
-    select name="klass"
-        - klass.each do |classelement|
-            option value="#{classelement["class_name"]}" #{classelement["class_name"]}
+    label Step 2. Choose your class
     select name="klass"
         - klass.each do |classelement|
             option value="#{classelement["class_name"]}" #{classelement["class_name"]}
