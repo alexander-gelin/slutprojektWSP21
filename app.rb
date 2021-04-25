@@ -3,6 +3,7 @@ require 'slim'
 require 'sqlite3'
 require 'bcrypt'
 enable :sessions
+include Model
 
 get('/') do
     slim(:register)
