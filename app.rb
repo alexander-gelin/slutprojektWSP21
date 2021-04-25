@@ -3,16 +3,25 @@ require 'slim'
 require 'sqlite3'
 require 'bcrypt'
 enable :sessions
-include Model
 
+# Displays Landing Page
+#
 get('/') do
     slim(:register)
 end
 
+# Displays Login Page
+#
 get('/showlogin') do
     slim(:login)
 end
 
+# Creates a new user and if successful, redirects to '/'
+#
+# @param [String] username, the user's username
+# @param [String] password, the user's password
+# @param [String] password_confirm, the users password again
+#
 post('/user/new') do
     username = params[:username]
     password = params[:password]
@@ -28,6 +37,11 @@ post('/user/new') do
     end
 end
 
+# Login using created user and if successful, redirects to '/creator/'
+# 
+# @param [String] username, the user's username
+# @param [String] password, the user's password
+#
 post('/login') do
     username = params[:username]
     password = params[:password]
@@ -45,6 +59,8 @@ post('/login') do
     end
 end
 
+# Displays user's created characters
+#
 get('/creator/') do
     id = session[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
@@ -53,6 +69,8 @@ get('/creator/') do
     slim(:"creator/index",locals:{character:result})
 end
 
+# Displays a form for creating characters
+#
 get('/creator/new') do
     id = session[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
@@ -62,6 +80,14 @@ get('/creator/new') do
     slim(:"creator/new",locals:{race:result,klass:result2})
 end
 
+# Creates a new character and redirects to '/creator/'
+#
+# @param [String] race, the character's race
+# @param [String] klass, the character's class
+# @param [String] name, the character's name
+# @param [Integer] age, the character's age
+# @param [String] spec, the character's specialization
+#
 post('/creator') do
     db = SQLite3::Database.new('db/charactercreator.db')
     id = session[:id].to_i
@@ -77,6 +103,8 @@ post('/creator') do
     redirect('/creator/')
 end
 
+# Deletes an existing character and redirects to '/creator/'
+#
 post('/creator/:id/delete') do
     id = params[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
