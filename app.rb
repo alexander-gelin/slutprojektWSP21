@@ -2,7 +2,7 @@ require 'sinatra'
 require 'slim'
 require 'sqlite3'
 require 'bcrypt'
-require_relative 'model/model.rb'
+# require_relative 'model/model.rb'
 enable :sessions
 
 # Displays Landing Page
@@ -91,7 +91,7 @@ end
 #
 post('/creator') do
     db = SQLite3::Database.new('db/charactercreator.db')
-    id = session[:id].to_i
+    user_id = session[:id].to_i
     race = params[:race]
     klass = params[:klass]
     name = params[:name]
@@ -100,7 +100,7 @@ post('/creator') do
     klass_id = db.execute("SELECT id FROM klass WHERE class_name = ?",klass)
 
     spec = db.execute("SELECT spec.spec_name FROM klass_spec_relation INNER JOIN spec ON klass_spec_relation.spec_id = spec.id WHERE klass_id = ?",klass_id)
-    character = db.execute("INSERT INTO character(name,age,race,klass,spec,user_id) VALUES(?,?,?,?,?,?)",name,age,race,klass,spec,id)
+    character = db.execute("INSERT INTO character(name,age,race,klass,spec,user_id) VALUES(?,?,?,?,?,?)",name,age,race,klass,spec,user_id)
     redirect('/creator/')
 end
 
@@ -110,5 +110,29 @@ post('/creator/:id/delete') do
     id = params[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
     db.execute("DELETE FROM character WHERE id = ?",id)
+    redirect('/creator/')
+end
+
+get('/creator/:id/edit') do
+    id = params[:id].to_i
+    db = SQLite3::Database.new('db/charactercreator.db')
+    db.results_as_hash = true
+    result = db.execute("SELECT * FROM character WHERE id = ?",id)
+    slim(:"creator/edit",locals:{character:result})
+end
+
+post('/creator/:id/update') do
+    id = params[:id].to_i
+    user_id = session[:id].to_i
+    db = SQLite3::Database.new('db/charactercreator.db')
+    race = params[:race]
+    klass = params[:klass]
+    name = params[:name]
+    age = params[:age]
+    
+    klass_id = db.execute("SELECT id FROM klass WHERE class_name = ?",klass)
+    spec = db.execute("SELECT spec.spec_name FROM klass_spec_relation INNER JOIN spec ON klass_spec_relation.spec_id = spec.id WHERE klass_id = ?",klass_id)
+
+    db.execute("UPDATE character SET name = ?, age = ?, race = ?, klass = ?, spec = ? WHERE id = ?",name,age,race,klass,spec,id)
     redirect('/creator/')
 end

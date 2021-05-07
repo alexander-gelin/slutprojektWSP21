@@ -12,3 +12,5 @@ ol
             p = character['spec']
             form action="/creator/#{character['id']}/delete" method="POST"
                 input id="deletebutton" type="submit" value="Delete"
+            form action="/creator/#{character['id']}/edit" method="GET"
+                input id="updatebutton" type="submit" value="Update"

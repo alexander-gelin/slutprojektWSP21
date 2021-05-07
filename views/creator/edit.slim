@@ -1,0 +1,19 @@
+form action="/creator/edit" method="POST"
+    label Step 1. Choose your race
+    select name="race"
+        - race.each do |raceelement|
+            option value="#{raceelement["race_name"]}" #{raceelement["race_name"]}
+
+    label Step 2. Choose your class
+    select name="klass"
+        - klass.each do |classelement|
+            option value="#{classelement["class_name"]}" #{classelement["class_name"]}
+
+    label Step 3. Enter name
+    input type="text" name="name" placeholder="Your name"
+
+    label Step 4. Enter age
+    input type="text" name="age" placeholder="Your age"
+ 
+    label Step 5. Finalize
+    input type="submit" value="Ready for adventure"
