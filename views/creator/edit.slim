@@ -1,19 +1,24 @@
-form action="/creator/edit" method="POST"
-    label Step 1. Choose your race
+h3 - Must choose a class without (selected)
+h3 * Cannot be blank
+
+form action="/creator/#{id}/update" method="POST"
+    label Step 1. Choose your race -
     select name="race"
+        option value="" selected="selected" #{character["race"]} (selected)
         - race.each do |raceelement|
             option value="#{raceelement["race_name"]}" #{raceelement["race_name"]}
 
-    label Step 2. Choose your class
+    label Step 2. Choose your class -
     select name="klass"
+        option value="" selected="selected" #{character["klass"]} (selected)
         - klass.each do |classelement|
             option value="#{classelement["class_name"]}" #{classelement["class_name"]}
 
-    label Step 3. Enter name
-    input type="text" name="name" placeholder="Your name"
+    label Step 3. Enter name *
+    input type="text" name="name" placeholder="#{character["name"]}"
 
-    label Step 4. Enter age
-    input type="text" name="age" placeholder="Your age"
+    label Step 4. Enter age *
+    input type="text" name="age" placeholder="#{character["age"]}"
  
     label Step 5. Finalize
     input type="submit" value="Ready for adventure"

@@ -117,14 +117,16 @@ get('/creator/:id/edit') do
     id = params[:id].to_i
     db = SQLite3::Database.new('db/charactercreator.db')
     db.results_as_hash = true
-    result = db.execute("SELECT * FROM character WHERE id = ?",id)
-    slim(:"creator/edit",locals:{character:result})
+    result = db.execute("SELECT * FROM character WHERE id = ?",id)[0]
+    result2 = db.execute("SELECT * FROM race")
+    result3 = db.execute("SELECT * FROM klass")
+    slim(:"creator/edit",locals:{character:result,race:result2,klass:result3,id:id})
 end
 
 post('/creator/:id/update') do
+    db = SQLite3::Database.new('db/charactercreator.db')
     id = params[:id].to_i
     user_id = session[:id].to_i
-    db = SQLite3::Database.new('db/charactercreator.db')
     race = params[:race]
     klass = params[:klass]
     name = params[:name]
@@ -133,6 +135,6 @@ post('/creator/:id/update') do
     klass_id = db.execute("SELECT id FROM klass WHERE class_name = ?",klass)
     spec = db.execute("SELECT spec.spec_name FROM klass_spec_relation INNER JOIN spec ON klass_spec_relation.spec_id = spec.id WHERE klass_id = ?",klass_id)
 
-    db.execute("UPDATE character SET name = ?, age = ?, race = ?, klass = ?, spec = ? WHERE id = ?",name,age,race,klass,spec,id)
+    character_update = db.execute("UPDATE character SET name = ?, age = ?, race = ?, klass = ?, spec = ? WHERE id = #{id}",name,age,race,klass,spec)
     redirect('/creator/')
 end
